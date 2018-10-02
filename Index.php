@@ -1,8 +1,2 @@
-<html>
-    <head>
-        <title>Vaporwave</title> 
-    </head>
-    <body>
-        <div></div>
-    </body>
-</html>
+<?php
+header( 'Location: login.html' );
