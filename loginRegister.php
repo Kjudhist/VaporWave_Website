@@ -3,7 +3,7 @@
 <script src="js/scriptLogReg.js"></script>
 <div id="pageContainer">
   <div id="formContainer">
-    <div id="logo"><img src="media/Logo.png"/></div>
+    <div id="logo"></div>
     <div id="forms">
       <form id="whyReg">
         <div class="fadeUp">

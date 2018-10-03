@@ -42,9 +42,6 @@ session_start();
     <section class="sec1">
         <div style="height: 15%">
             <nav>
-                <div class="logo">
-                    <img src="media/LogoColor.png">
-                </div>
                 <ul>
                     <li>
                         <a href="home.php">Home</a>
