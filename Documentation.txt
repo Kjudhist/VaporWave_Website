@@ -1,0 +1,2 @@
+color pallete VVVV
+https://material.io/color/#!/?view.left=0&view.right=0&primary.color=616161&secondary.color=9E9E9E&primary.text.color=ffffff&secondary.text.color=000000

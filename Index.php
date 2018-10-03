@@ -1,2 +1,2 @@
 <?php
-header( 'Location: login.html' );
+header( 'Location: loginRegister.php' );
