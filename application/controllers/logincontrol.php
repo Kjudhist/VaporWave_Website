@@ -69,19 +69,19 @@ class logincontrol extends CI_Controller {
 		
 // Check validation for user input in SignUp form
 		$this->form_validation->set_rules('nama', 'Nama', 'required');
-		$this->form_validation->set_rules('alamat', 'Alamat', 'required');
+		$this->form_validation->set_rules('date', 'Tanggal Lahir', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('pass', 'Password', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('register');
 		} else {
 			$data = array(
 				'nama' => $this->input->post('nama'),
-				'alamat' => $this->input->post('alamat'),
+				'tanggal_lahir' => $this->input->post('date'),
 				'email' => $this->input->post('email'),
-				'password' => $this->input->post('password')
+				'password' => $this->input->post('pass')
 				);
-			$result = $this->login_database->registration_insert($data);
+			$result = $this->loginmodel->registration_insert($data);
 			if ($result == TRUE) {
 				$data['message_display'] = 'Registration Successfully !';
 				$this->load->view('login', $data);
