@@ -3,7 +3,6 @@
 <html lang="en">
 <?php
 if (isset($this->session->userdata['logged_in'])) {
-
 header("location: http://localhost/vaporwave/index.php/logincontrol/login_authentication");
 }
 ?>
@@ -80,8 +79,6 @@ header("location: http://localhost/vaporwave/index.php/logincontrol/login_authen
         </div>
       </center>
     </div>
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

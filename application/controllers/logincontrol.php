@@ -25,7 +25,6 @@ class logincontrol extends CI_Controller {
 	}
 
 	public function login_authentication(){
-
 		$this->form_validation->set_rules('email', 'email', 'required|valid_email');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
@@ -102,4 +101,25 @@ class logincontrol extends CI_Controller {
 		$data['message_display'] = 'Successfully Logout';
 		$this->load->view('login', $data);
 	}
+
+	public function do_upload()
+        {
+                $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'jpg|png';
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('userfile'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        $this->load->view('upload_form', $error);
+                }
+                else
+                {
+                        $data = array('upload_data' => $this->upload->data());
+
+                        $this->load->view('upload_success', $data);
+                }
+        }
 }
