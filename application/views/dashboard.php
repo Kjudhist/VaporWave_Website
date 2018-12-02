@@ -27,55 +27,64 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
-  </head>
+    </head>
 
-  <body>
+    <body>
 
-  	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  		<div class="container-fluid">
-  			<div class="navbar-header">
+     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+       <div class="navbar-header">
           <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-        </button> -->
-        <a class="navbar-brand"><span class="glyphicon glyphicon-home"> Vaporwave</span></a>
+          </button> -->
+          <a class="navbar-brand"><span class="glyphicon glyphicon-home"> Vaporwave</span></a>
 
+        </div>
+        <div class="navbar-collapse collapse">
+         <ul class="nav navbar-nav navbar-right">
+          <li><a class="navbar-brand" href="logout"><span class="glyphicon glyphicon-share"> logout</span></a></li>
+        </ul>
+      </div>
     </div>
-    <div class="navbar-collapse collapse">
-    	<ul class="nav navbar-nav navbar-right">
-    		<li><a class="navbar-brand" href="logout"><span class="glyphicon glyphicon-share"> logout</span></a></li>
-    	</ul>
-    </div>
-</div>
-</div>
+  </div>
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-3 col-md-2 sidebar">
-			<ul class="nav nav-sidebar">
-				<li><a>Dashboard</a></li>
-				<li><a>Edit Profile</a></li>
-				<li><a href="<?php echo base_url() ?>index.php/logincontrol/logout">Logout</a></li>
-			</ul>
-		</div>
-		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="page-one" >
-
-			<?php echo form_open_multipart('logincontrol/do_upload');?>
-
-			<input type="file" name="userfile" size="20" />
-			<br /><br />
-			<input type="submit" value="upload" />
-		</div>
-	</div>
-</div>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+     <ul class="nav nav-sidebar">
+      <li><a>Dashboard</a></li>
+      <li><a>Edit Profile</a></li>
+      <li><a href="<?php echo base_url() ?>index.php/logincontrol/logout">Logout</a></li>
+    </ul>
+  </div>
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="page-one" >
+    <form method="post">
+                    <!-- <div class="input-group">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                      <input type="number" name="id" class="form-control" placeholder="Id">
+                    </div>
+                    <br> -->
+                    <div class="input-group">
+                    <textarea type="text-area" name="nama" class="form-control" placeholder="Caption" required="required" style="min-width: 627px"></textarea>
+                    </div>
+                    <br>
+                    <?php echo form_open_multipart('logincontrol/do_upload');?>
+                    <input type="file" name="userfile" size="20" />
+                    <br /><br />
+                    <input name="daftar" type="submit" class="btn btn-block btn-primary" value="upload">
+                  </form>
+                </div>
+              </div>
+            </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="<?php echo base_url() ?>js/jquery.min.js"></script>
     <script src="<?php echo base_url() ?>dist/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/docs.min.js"></script>
-</body>
-</html>
+  </body>
+  </html>
 
