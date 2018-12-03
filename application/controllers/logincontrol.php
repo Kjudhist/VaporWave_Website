@@ -104,8 +104,11 @@ class logincontrol extends CI_Controller {
 		$this->load->view('login2', $data);
 	}
 
-	public function do_upload() {
+	public function upload_page(){
+		$this->load->view('upload');
+	}
 
+	public function do_upload() {
 		$config['upload_path']          = './uploads/';
 		$config['allowed_types']        = 'jpg|png';
 		$config['max_size']				= '9999999999';
@@ -115,8 +118,7 @@ class logincontrol extends CI_Controller {
 		if ( ! $this->upload->do_upload('userfile'))
 		{
 			$error = array('error' => $this->upload->display_errors());
-
-			$this->load->view('dashboard', $error);
+			$this->load->view('upload', $error);
 		}
 		else
 		{
@@ -124,7 +126,7 @@ class logincontrol extends CI_Controller {
 			$file_info = $this->upload->data();
 			$img = $file_info['file_name']; 
 			echo '<script type="text/javascript">alert("'.$img.'");</script>';
-    		$this->load->view('dashboard', $data);
-    	}
-    }
+			$this->load->view('dashboard', $data);
+		}
+	}
 }
