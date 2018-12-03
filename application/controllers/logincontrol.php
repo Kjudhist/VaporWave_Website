@@ -55,6 +55,7 @@ class logincontrol extends CI_Controller {
 					$this->session->set_userdata('logged_in', $session_data);
 					$this->load->view('dashboard');
 				}
+				
 			} else {
 				$data = array(
 					'error_message' => 'Invalid username or Password'
