@@ -5,7 +5,6 @@ Class loginmodel extends CI_Model {
 // Insert registration data in database
 	public function registration_insert($data) {
 
-// Query to check whether email already exist or not
 		$condition = "username =" . "'" . $data['username'] . "'";
 		$this->db->select('*');
 		$this->db->from('user');
@@ -18,6 +17,16 @@ Class loginmodel extends CI_Model {
 			if ($this->db->affected_rows() > 0) {
 				return true;
 			}
+		} else {
+			return false;
+		}
+	}
+
+	public function file_insert($data) {
+			// Query to insert data in database
+			$this->db->insert('postingan', $data);
+			if ($this->db->affected_rows() > 0) {
+				return true;
 		} else {
 			return false;
 		}

@@ -39,13 +39,13 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="home.php">Home</a>
+                        <a href="<?php echo base_url()?>index.php/logincontrol/login_authentication">Home</a>
                     </li>
                     <li>
                         <a href="About.html">About</a>
                     </li>
                     <li>
-                        <a href="upload.php" class="active">Upload</a>
+                        <a href="<?php echo base_url()?>index.php/logincontrol/upload_page" class="active">Upload</a>
                     </li>
                     <li>
                         <a href="profile.php">Profile</a>

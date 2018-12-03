@@ -63,8 +63,8 @@ if (isset($this->session->session_data['logged_in'])) {
               <td>
                 <center>
                   <?php 
-                  echo $this->session->session_data('username');
-                  echo $this->session->session_data('email');
+                  echo $this->session->userdata['logged_in']['username'];
+                  echo $this->session->userdata['logged_in']['email'];
                   ?>
                   <img src ="<?php echo $_SESSION['uploaded'];?>" height=500 width=500>
                 </td>

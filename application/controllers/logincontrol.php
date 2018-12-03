@@ -69,7 +69,7 @@ class logincontrol extends CI_Controller {
 	}
 
 	public function register_page(){
-		
+
 // Check validation for user input in SignUp form
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
@@ -104,6 +104,7 @@ class logincontrol extends CI_Controller {
 		$this->load->view('login2', $data);
 	}
 
+	// Pindah2 page 
 	public function upload_page(){
 		$this->load->view('upload');
 	}
@@ -126,6 +127,22 @@ class logincontrol extends CI_Controller {
 			$file_info = $this->upload->data();
 			$img = $file_info['file_name']; 
 			echo '<script type="text/javascript">alert("'.$img.'");</script>';
+			$now = new DateTime();
+			$now->setTimezone(new DateTimezone('Asia/Jakarta'));
+			$data = array(
+				'deskripsi' => $this->input->post('caption'),
+				'username' => $this->session->userdata['logged_in']['username'],
+				'uploaded' => $img,
+				'time' => $now->format('H:i:s')
+				);
+			$result = $this->loginmodel->file_insert($data);
+			if ($result == TRUE) {
+				$data['message_display'] = 'Registration Successfully!';
+				$this->load->view('login2', $data);
+			} else {
+				echo "<script type='text/javascript'>alert('username already exist');</script>";
+				$this->load->view('login2', $data);
+			}
 			$this->load->view('dashboard', $data);
 		}
 	}
