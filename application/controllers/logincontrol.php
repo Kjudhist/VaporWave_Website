@@ -105,7 +105,6 @@ class logincontrol extends CI_Controller {
 	public function upload_page(){
 		$this->load->view('upload');
 	}
-
 	public function do_upload() {
 		$config['upload_path']          = './uploads/';
 		$config['allowed_types']        = 'jpg|png';
