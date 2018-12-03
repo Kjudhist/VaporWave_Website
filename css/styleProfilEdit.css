@@ -16,7 +16,7 @@ div.portfoliocard {
 div.portfoliocard div.coverphoto {
     width: 100%;
     height: 120px;
-    background: url('../media/1.jpg');
+    background: url('/media/3.jpg');
     background-position: center center;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;

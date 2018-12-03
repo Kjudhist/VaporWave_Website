@@ -1,6 +1,5 @@
 // JQUERY
 $(function() {
-	
 	// Switch to Register
 	$('.needAccount, .backLogin').click(function() {
 		$('#login, #register, #formContainer').toggleClass('switch');
