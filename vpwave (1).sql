@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2018 at 01:57 PM
+-- Generation Time: Dec 03, 2018 at 11:11 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -35,6 +35,13 @@ CREATE TABLE `postingan` (
   `no` int(15) NOT NULL,
   `time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `postingan`
+--
+
+INSERT INTO `postingan` (`deskripsi`, `username`, `uploaded`, `no`, `time`) VALUES
+('Coba', 'jovi', 'e34ea964554d2496f4a0de9c5dbc4e61--le-smoking-smoking-ladies4.jpg', 3, '23:44:51');
 
 -- --------------------------------------------------------
 
@@ -89,7 +96,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `postingan`
 --
 ALTER TABLE `postingan`
-  MODIFY `no` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `no` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
