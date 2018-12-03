@@ -1,4 +1,17 @@
-
+<?php
+include ("koneksi.php");
+session_start();
+    if (empty($_SESSION['username'])){
+        header("location:loginRegister.php");
+    }else{
+        $q=mysqli_query($con, "select * from user where username='".$_SESSION['username']."'");
+        $r=$q->fetch_array();
+        $_SESSION['blog'] = $r['blog'];
+        $_SESSION['email'] = $r['email'];
+        $_SESSION['birthday'] = $r['birthday'];
+        $_SESSION['phone'] = $r['phone'];
+    }
+?>
 <html>
 <head>
     <meta charset="utf-8">
