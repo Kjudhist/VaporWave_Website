@@ -62,10 +62,16 @@ session_start();
                 <td>
                     <center>
                     <?php 
-                    echo $_SESSION['username']."<br>";
-                    echo $_SESSION['deskripsi']."<br>";
+                    $dirname = "media/images/iconized/";
+                    $images = scandir($dirname);
+                    $ignore = Array(".", "..");
+                    foreach($images as $curimg){
+                    if(!in_array($curimg, $ignore)) {
+                    echo "<img src='media/images/iconized/$curimg' /><br>\n";
+                    };
+                    }
                     ?>
-                    <img src ="<?php echo $_SESSION['uploaded'];?>" height=500 width=500>
+                    <!--img src ="<?php echo $_SESSION['uploaded'];?>" height=500 width=500> -->
                 </td>
             </tr>
         </table>
