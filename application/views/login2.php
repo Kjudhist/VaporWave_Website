@@ -1,3 +1,8 @@
+<?php
+if (isset($this->session->userdata['logged_in'])) {
+  header("location: http://localhost/vaporwave/index.php/logincontrol/login_authentication");
+}
+?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

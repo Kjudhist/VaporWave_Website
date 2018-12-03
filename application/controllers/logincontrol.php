@@ -60,9 +60,7 @@ class logincontrol extends CI_Controller {
 				}
 
 			} else {
-				$data = array(
-					'error_message' => 'Invalid username or Password'
-					);
+				echo "<script type='text/javascript'>alert('username already exist');</script>";
 				$this->load->view('login2', $data);
 			}
 		}
@@ -100,8 +98,7 @@ class logincontrol extends CI_Controller {
 			'email' => ''
 			);
 		$this->session->unset_userdata('logged_in', $sess_array);
-		$data['message_display'] = 'Successfully Logout';
-		$this->load->view('login2', $data);
+		header("location: http://localhost/vaporwave");
 	}
 
 	// Pindah2 page 

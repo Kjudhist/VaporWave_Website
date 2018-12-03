@@ -1,12 +1,12 @@
+<html>
 <?php
-if (isset($this->session->session_data['logged_in'])) {
-  $username = ($this->session->session_data['logged_in']['username']);
-  $email = ($this->session->session_data['logged_in']['email']);
+if (isset($this->session->userdata['logged_in'])) {
+$username = ($this->session->userdata['logged_in']['username']);
+$email = ($this->session->userdata['logged_in']['email']);
 } else {
-  header("location: login2");
+header("location: http://localhost/vaporwave");
 }
 ?>
-<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +52,7 @@ if (isset($this->session->session_data['logged_in'])) {
                 <a href="<?php echo base_url()?>index.php/logincontrol/upload_page">Upload</a>
               </li>
               <li>
-                <a href="profile.php">Profile</a>
+                <a href="<?php echo base_url()?>index.php/logincontrol/logout">Profile</a>
               </li>
             </ul>
           </nav>
@@ -62,10 +62,6 @@ if (isset($this->session->session_data['logged_in'])) {
             <tr>
               <td>
                 <center>
-                  <?php 
-                  echo $this->session->userdata['logged_in']['username'];
-                  echo $this->session->userdata['logged_in']['email'];
-                  ?>
                   <img src ="<?php echo $_SESSION['uploaded'];?>" height=500 width=500>
                 </td>
               </tr>
