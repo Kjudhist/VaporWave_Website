@@ -33,7 +33,7 @@ class logincontrol extends CI_Controller {
 			if(isset($this->session->userdata['logged_in'])){
 				$this->load->view('dashboard');
 			}else{
-				$this->load->view('login2');
+				header("location: http://localhost/vaporwave");
 			}
 		} else {
 			$data = array(
