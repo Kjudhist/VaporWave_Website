@@ -47,15 +47,18 @@ class logincontrol extends CI_Controller {
 				if ($result != false) {
 					$session_data = array(
 						'username' => $result[0]->username,
-						'nama' => $result[0]->nama,
+						'sandi' => $result[0]->sandi,
 						'email' => $result[0]->email,
-						'tanggal'=>$result[0]->tanggal_lahir
+						'birthdate'=>$result[0]->birthdate,
+						'blog'=>$result[0]->blog,
+						'foto'=>$result[0]->foto,
+						'phone'=>$result[0]->phone
 						);
 					// Add user data in session
 					$this->session->set_userdata('logged_in', $session_data);
 					$this->load->view('dashboard');
 				}
-				
+
 			} else {
 				$data = array(
 					'error_message' => 'Invalid username or Password'
@@ -81,11 +84,11 @@ class logincontrol extends CI_Controller {
 				);
 			$result = $this->loginmodel->registration_insert($data);
 			if ($result == TRUE) {
-				$data['message_display'] = 'Registration Successfully !';
-				$this->load->view('login', $data);
+				$data['message_display'] = 'Registration Successfully!';
+				$this->load->view('login2', $data);
 			} else {
-				$data['message_display'] = 'Email already exist!';
-				$this->load->view('register', $data);
+				echo "<script type='text/javascript'>alert('username already exist');</script>";
+				$this->load->view('login2', $data);
 			}
 		}
 	}
