@@ -76,7 +76,7 @@ class logincontrol extends CI_Controller {
 			$data = array(
 				'username' => $this->input->post('username'),
 				'email' => $this->input->post('email'),
-				'password' => $this->input->post('pass')
+				'sandi' => $this->input->post('pass')
 				);
 			$result = $this->loginmodel->registration_insert($data);
 			if ($result == TRUE) {
