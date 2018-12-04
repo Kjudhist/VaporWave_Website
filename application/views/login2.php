@@ -33,7 +33,7 @@ if (isset($this->session->userdata['logged_in'])) {
     </head>
     <div id="pageContainer">
       <div id="formContainer">
-        <div id="logo"></div>
+        <div id="logo"><img src="../media/Logo.png"/></div>
         <div id="forms">
           <form id="whyReg">
             <div class="fadeUp">
