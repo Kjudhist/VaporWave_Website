@@ -33,7 +33,7 @@ session_start();
             }
         );
     </script>
-    <title></title>
+    <title>VAPORWAVE</title>
 </head>
 
 <body>

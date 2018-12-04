@@ -8,7 +8,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../favicon.ico">
 
-  <title>Sistem Informasi Persewaan Kamar</title>
+  <title>VAPORWAVE</title>
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo base_url() ?>dist/css/bootstrap.min.css" rel="stylesheet">
